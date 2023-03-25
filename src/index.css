@@ -2,7 +2,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  font-family: arial,sans-serif;
+  font-family: arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: -webkit-center;
@@ -10,29 +10,33 @@ body {
   color: white;
   display: grid;
   place-items: center;
-  background-image: linear-gradient(to bottom right,rgb(129, 37, 172),rgb(39, 47, 198));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(129, 37, 172),
+    rgb(39, 47, 198)
+  );
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.w-80vw{
+.w-80vw {
   width: 80vw;
 }
-.heading-text{
+.heading-text {
   font-size: 4rem;
 }
-.que-container{
+.que-container {
   /* width: 50%; */
   height: auto;
   /* border: 1px solid rgb(97, 13, 223);; */
   /* box-shadow: 0 0 2px rgb(16, 45, 51) ; */
 }
-.que-container{
+.que-container {
   padding: 1rem;
 }
-.question-wrapper{
+.question-wrapper {
   /* padding: 1rem;
   border: 1px solid green;
   margin: 1rem;
@@ -43,12 +47,13 @@ code {
   margin-bottom: 3rem;
   font-size: 1.5rem;
 }
-.option{
+.option {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-evenly;
-  max-width: 80%;}
-.ans-option{
+  max-width: 80%;
+}
+.ans-option {
   display: grid;
   grid-template-columns: auto auto auto;
   align-items: center;
@@ -57,7 +62,7 @@ code {
   max-width: 20rem;
   position: relative;
 }
-.option-btn{
+.option-btn {
   border: none;
   /* box-shadow: 0 0 5px rgb(3, 55, 50); */
   width: 90%;
@@ -68,7 +73,6 @@ code {
   font-size: 1.2rem;
   color: rgb(255, 255, 255);
   width: 15rem;
-
 }
 .triangle-right {
   width: 1.5rem;
@@ -106,7 +110,7 @@ code {
   cursor: pointer;
   background-color: rgb(32, 172, 169);
 } */
-.svg-circle{
+.svg-circle {
   /* padding: 0.5rem;
   font-weight: bold;
   background-color: rgb(28, 2, 130);
@@ -117,30 +121,30 @@ code {
   margin: 1rem;
   width: 5rem; */
   width: 3rem;
-    display: grid;
-    height: 3rem;
-    border: 1px solid rgb(255, 255, 255);
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    align-content: center;
-    margin-top: 3rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+  display: grid;
+  height: 3rem;
+  border: 1px solid rgb(255, 255, 255);
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  align-content: center;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
-.svg-circle:hover{
+.svg-circle:hover {
   color: rgb(28, 2, 130);
   cursor: pointer;
-  background-color: rgb(198, 166, 4); 
+  background-color: rgb(198, 166, 4);
 }
-.submit-btn{
+.submit-btn {
   display: flex;
   justify-content: center;
 }
-.clicked{
+.clicked {
   background-color: rgb(198, 166, 4);
 }
-.clickedTriangleRight{
+.clickedTriangleRight {
   width: 1.5rem;
   height: 1.5rem;
   border-right: 1px solid rgb(198, 166, 4);
@@ -168,11 +172,11 @@ code {
   left: -10px;
   border-radius: 3px;
 }
-.score{
+.score {
   font-size: 2rem;
   margin-bottom: 4rem;
 }
-.try-again-btn{
+.try-again-btn {
   padding: 1rem;
   background-color: rgb(255, 255, 255);
   border: none;
@@ -181,21 +185,41 @@ code {
   border-radius: 20px;
   margin-top: 3rem;
 }
-.try-again-btn:hover{
+.try-again-btn:hover {
   cursor: pointer;
   color: white;
   background-color: rgb(129, 37, 172);
 }
-.congrats-msg{
+.congrats-msg {
   font-size: 2.5rem;
   color: rgb(0, 174, 255);
 }
+
+@media only screen and (max-width: 950px) {
+  .option {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: space-evenly;
+    max-width: 80%;
+  }
+}
+
 /* for firework */
 
 @keyframes firework {
-  0% { transform: translate(var(--x), var(--initialY)); width: var(--initialSize); opacity: 1; }
-  50% { width: 0.5vmin; opacity: 1; }
-  100% { width: var(--finalSize); opacity: 0; }
+  0% {
+    transform: translate(var(--x), var(--initialY));
+    width: var(--initialSize);
+    opacity: 1;
+  }
+  50% {
+    width: 0.5vmin;
+    opacity: 1;
+  }
+  100% {
+    width: var(--finalSize);
+    opacity: 0;
+  }
 }
 
 /* @keyframes fireworkPseudo {
@@ -206,8 +230,7 @@ code {
  */
 .firework,
 .firework::before,
-.firework::after
-{
+.firework::after {
   --initialSize: 0.5vmin;
   --finalSize: 45vmin;
   --particleSize: 0.2vmin;
@@ -228,48 +251,50 @@ code {
   transform: translate(-50%, var(--y));
   width: var(--initialSize);
   aspect-ratio: 1;
-  background: 
-    
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 50% 0%,
+  background: radial-gradient(
+        circle,
+        var(--color1) var(--particleSize),
+        #0000 0
+      )
+      50% 0%,
     radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 50%,
     radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50% 100%,
     radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0% 50%,
-    
     /* bottom right */
-    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80% 90%,
+      radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 80%
+      90%,
     radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95% 90%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90% 70%,
     radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100% 60%,
     radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55% 80%,
     radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70% 77%,
-    
     /* bottom left */
-    radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22% 90%,
+      radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 22%
+      90%,
     radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45% 90%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 70%,
     radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10% 60%,
     radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31% 80%,
     radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28% 77%,
     radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13% 72%,
-    
     /* top left */
-    radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80% 10%,
+      radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 80%
+      10%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95% 14%,
     radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90% 23%,
     radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100% 43%,
     radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85% 27%,
     radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77% 37%,
     radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60% 7%,
-    
     /* top right */
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22% 14%,
+      radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 22%
+      14%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45% 20%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33% 34%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10% 29%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31% 37%,
     radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28% 7%,
-    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%
-    ;
+    radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13% 42%;
   background-size: var(--initialSize) var(--initialSize);
   background-repeat: no-repeat;
 }
@@ -278,18 +303,18 @@ code {
   --x: -50%;
   --y: -50%;
   --initialY: -50%;
-/*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
+  /*   transform: translate(-20vmin, -2vmin) rotate(40deg) scale(1.3) rotateY(40deg); */
   transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
-/*   animation: fireworkPseudo 2s infinite; */
+  /*   animation: fireworkPseudo 2s infinite; */
 }
 
 .firework::after {
   --x: -50%;
   --y: -50%;
   --initialY: -50%;
-/*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
+  /*   transform: translate(44vmin, -50%) rotate(170deg) scale(1.15) rotateY(-30deg); */
   transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
-/*   animation: fireworkPseudo 2s infinite; */
+  /*   animation: fireworkPseudo 2s infinite; */
 }
 
 .firework:nth-child(2) {
@@ -304,7 +329,7 @@ code {
   --color3: fuchsia;
   --color4: orchid;
   --color5: plum;
-  --color6: lavender;  
+  --color6: lavender;
   --finalSize: 40vmin;
   left: 30%;
   top: 60%;
